@@ -1,7 +1,13 @@
 FROM node:16-alpine3.14
+
 WORKDIR /usr/src/app
-# EXPOSE 8000
-# COPY package.json ./
-# RUN yarn install
-# COPY . .
-# CMD ["yarn", "start"]
+
+COPY ["package.json", "yarn.lock", "./"]
+RUN yarn install
+
+EXPOSE 8000
+ENV PORT=8000
+
+COPY . .
+
+CMD ["yarn", "start"]
