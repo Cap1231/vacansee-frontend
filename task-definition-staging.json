@@ -9,7 +9,7 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/vacansee-frontend-task-defintion-staging",
+          "awslogs-group": "/ecs/vacansee-frontend-task-definition-staging",
           "awslogs-region": "ap-northeast-1",
           "awslogs-stream-prefix": "ecs"
         }
@@ -37,7 +37,7 @@
       "memoryReservation": 384,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "244676871863.dkr.ecr.ap-northeast-1.amazonaws.com/vacansee-frontend-staging:292e28e7c6802bd3a66bbbc1b66aa92fa7f2adca",
+      "image": "244676871863.dkr.ecr.ap-northeast-1.amazonaws.com/vacansee-frontend-staging:1541c317d62bbc50c6828190f6989c1681256ca7",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -59,13 +59,13 @@
   ],
   "placementConstraints": [],
   "memory": "512",
-  "taskRoleArn": null,
+  "taskRoleArn": "arn:aws:iam::244676871863:role/ecsTaskExecutionRole",
   "compatibilities": [
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:244676871863:task-definition/vacansee-frontend-task-defintion-staging:1",
-  "family": "vacansee-frontend-task-defintion-staging",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:244676871863:task-definition/vacansee-frontend-task-definition-staging:1",
+  "family": "vacansee-frontend-task-definition-staging",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -96,6 +96,12 @@
       "targetType": null,
       "value": null,
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
     },
     {
       "targetId": null,
